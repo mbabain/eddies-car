@@ -1,0 +1,682 @@
+// Fonts
+@font-face {
+	font-family: 'ProximaNova';
+	src: url('../fonts/ProximaNova-Regular.eot');
+	src: local('☺'), url('../fonts/ProximaNova-Regular.woff') format('woff'), url('../fonts/ProximaNova-Regular.ttf') format('truetype'), url('../fonts/ProximaNova-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ProximaNova';
+	src: url('../fonts/ProximaNova-Bold.eot');
+	src: local('☺'), url('../fonts/ProximaNova-Bold.woff') format('woff'), url('../fonts/ProximaNova-Bold.ttf') format('truetype'), url('../fonts/ProximaNova-Bold.svg') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'ProximaNova';
+	src: url('../fonts/ProximaNova-Extrabld.eot');
+	src: local('☺'), url('../fonts/ProximaNova-Extrabld.woff') format('woff'), url('../fonts/ProximaNova-Extrabld.ttf') format('truetype'), url('../fonts/ProximaNova-Extrabld.svg') format('svg');
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ProximaNova';
+	src: url('../fonts/ProximaNova-Black.eot');
+	src: local('☺'), url('../fonts/ProximaNova-Black.woff') format('woff'), url('../fonts/ProximaNova-Black.ttf') format('truetype'), url('f../onts/ProximaNova-Black.svg') format('svg');
+	font-weight: 900;
+	font-style: normal;
+}
+// / Fonts
+
+// Varibales
+
+$color-white: #ffffff;
+$color-black: #000000;
+
+// / Variables
+
+// Common
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'ProximaNova';
+    color: $color-white;
+}
+
+.section-outer {
+    padding: 100px 15px;
+}
+
+.section-outer--header {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.section-outer--first-block {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $color-white;
+    cursor: pointer;
+}
+
+.input {
+    width: 370px;
+    padding: 26px 29px;
+    outline: none;
+    border: none;
+    background-color: #f2f2f2;
+
+    & + & {
+        margin-left: 30px;
+    }
+
+    &::placeholder {
+        font-size: 13px;
+        text-transform: uppercase;
+        color: #818181;
+    }
+}
+
+.input--telephone,
+.input--email {  
+    background-repeat: no-repeat;
+    background-position: 91%;
+}
+.input--email {
+    background-image: url("../img/mail.png");   
+}
+
+.input--telephone {
+    background-image: url("../img/tel.png");   
+}
+
+.headline {
+    text-align: center;
+}
+
+.title {
+    font-size: 36px;
+    margin-bottom: 25px;
+    font-weight: 900;
+    color: $color-white;
+} 
+.title--font-smaller {
+    font-size: 30px;
+}
+
+.title--black {
+    width: 60%;
+    margin: 0 auto 25px;
+    color: $color-black;
+}
+
+.subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    color: $color-white;
+}
+
+.subtitle--black {
+    color: $color-black;
+}
+
+.items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item--flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+// / Common
+
+// Header
+.section-header {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #191919;
+
+    .section-inner {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &-logo {
+        width: 40%;
+    }
+
+    &-timetable {
+        position: relative;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 2;
+        color: $color-white;
+
+        div {
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+
+    &-request-сall {
+        display: flex;
+        align-items: center;
+
+        &__wrapper {
+            margin-right: 28px;
+        }
+        
+        &__telephone {
+            font-size: 18px;
+            font-weight: 900;
+            line-height: 1.5;
+            color: $color-white;
+        }
+
+        &__button {
+            padding: 19px 28px;
+            font-size: 12px;
+            background-color: #1669b3;
+        }
+    }
+}
+// / Header
+
+// First-block
+.section-first-block {
+    background: url("../img/first-block/Background.jpg")
+        center no-repeat;
+        background-size: cover;
+
+    .section-inner {
+        display: flex;
+    }
+
+    &-item {
+        width: 50%;
+        padding: 100px 124px 125px 100px;
+        text-align: start;
+        background-color: #f7b516;
+        color: $color-black;
+    }
+
+    &-title {
+        margin-bottom: 35px;
+        font-size: 40px;
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 1.375;
+    }
+
+    &-subtitle {
+        width: 80%;
+        margin-bottom: 100px;
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    &-advantages {
+        display: flex;
+        align-items: center;
+        margin-bottom: 48px;
+        font-size: 18px;
+        font-weight: 400;
+
+        img {
+            margin-right: 26px;
+        }
+    }
+}
+// / First-block
+
+// Price
+.section-price {
+    background: url("../img/price/background.jpg")
+        no-repeat center;
+        background-size: cover;
+    .section-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: end;
+    }
+
+    &-title {
+        width: 40%;
+        margin-bottom: 60px;
+        font-size: 30px;
+        font-weight: 900;
+        color: $color-black;
+    }
+
+    &-row {
+        display: flex;
+
+        & + & {
+            margin-top: 30px;
+        }
+    }
+
+    &-text {
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+        font-size: 14px;
+        color: $color-black;
+
+        img {
+            margin-left: 30px;
+        }
+    }
+
+    &-button {
+        background-color: #1866af;
+        padding: 31px 112px;
+    }
+}
+// / Price
+
+// Fast
+.section-fast {
+    background-color: #08243e;
+
+    .headline {
+        margin-bottom: 100px;
+    }
+
+    .subtitle {
+        width: 35%;
+        margin: 0 auto;
+    }
+
+    .items {
+        align-items: flex-start;
+    }
+
+    .item {
+
+        & + & {
+            margin-left: 50px;
+        }
+
+        .engine {
+            margin-bottom: 49px;
+        }
+
+        .truck {
+            margin-bottom: 60px;
+        }
+
+        .calendar,
+        .gps {
+            margin-bottom: 54px;
+        }
+    }
+
+    &-text {
+        font-size: 18px;
+        text-align: center;
+    }
+}
+// / Fast
+
+// Search
+.section-search {
+    background: url("../img/search/background.jpg")
+        no-repeat center;
+    background-size: cover;
+
+    .headline {
+        margin-bottom: 60px;
+    }
+
+    .items {
+        margin-bottom: 60px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .input {
+        margin-right: 30px;
+    }
+
+    .button {
+        line-height: 0.9;
+        padding: 28px 131px;
+        background-color: #f7b516;
+    }
+
+    &-text {
+        font-size: 14px;
+        text-align: center;
+
+        &__telephone-text {
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        &__telephone {
+            font-size: 30px;
+            font-weight: 700;
+        }
+    }
+}
+// / Search
+
+// Guarantee
+.section-guarantee {
+    font-size: 18px;
+    color: $color-black;
+
+    .headline {
+        margin-bottom: 100px;
+    }
+
+    .item {
+        margin-left: 90px;
+        text-align: center;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    .img {
+        margin-bottom: 63px;
+    }
+
+    .description {
+        width: 85%;
+        margin-bottom: 39px;
+    }
+
+    .link {
+        font-weight: 700;
+        color: $color-black;
+        text-transform: uppercase;
+    }
+}
+// / Gaurantee
+
+// Discount
+.section-discount {
+    background-color: #08243e;
+
+    .title {
+        width: 58%;
+        margin: 0 auto 100px;
+    }
+
+    .items {
+        align-items: flex-start;
+    }
+
+    .item {
+        width: 25%;
+        margin-left: 66px;
+        text-align: center;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+    .circle {
+        display: flex;
+        margin-bottom: 35px;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 2px solid #ffffff;
+
+        span {
+            font-size: 30px;
+            font-weight: 700;
+        }
+    }
+    
+    .text {
+        width: 80%;
+    }
+}
+// / Discount
+
+// Faq
+.section-faq {
+    background-color: #0b3554;
+
+    .headline {
+        margin-bottom: 100px;
+    }
+
+    .items {
+        align-items: center;
+    }
+
+    .item {
+        margin-right: 30px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .questions {
+        padding-left: 20px;
+    }
+
+    .question {
+        position: relative;
+        margin-bottom: 55px;
+        padding-left: 30px;
+
+        .question-text {
+            position: relative;
+            z-index: 1;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: color 0.2s ease-in;
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: #fff;
+                transform-origin: center;
+                transition: 0.2s ease-in;
+            }
+
+            &:hover{
+                color: #579eff;
+    
+                &:after {
+                    transform: scale(0);
+                    background-color: #579eff;
+                }
+    
+            }
+        }
+    }
+
+    .repeat {
+        margin-left: 2px;
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+
+        img {
+            margin-right: 32px;
+            transition: transform 0.4s ease-in;
+        }
+
+        span {
+            position: relative;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: color 0.2s ease-in;
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: #fff;
+                transform-origin: center;
+                transition: 0.2s ease-in;
+            }
+        }
+       
+        &:hover {
+            img {
+                transform: rotate(360deg);
+            }
+
+            span {
+                color: #579eff;
+
+                &:after {
+                    transform: scale(0);
+                    background-color: #579eff;
+                }
+            }
+        }
+
+    }
+}
+// / Faq
+
+// Comfort
+.section-comfort {
+    color: $color-black;
+
+    .headline {
+        margin-bottom: 100px;
+    }
+
+    .items {
+        justify-content: space-around;
+    }
+
+    .item {
+        width: 18%;
+        margin-right: 20px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        img {
+            margin-bottom: 49px;
+        }
+    }
+
+    .text {
+        font-size: 18px;
+        text-align: center;
+    }
+}
+// / Comfort
+
+// Warehouse
+.section-warehouse {
+    background-color: #0b3554;
+
+    .headline {
+        margin-bottom: 100px;
+    }
+
+    .item {
+        margin-right: 30px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .img {
+        img {
+            max-width: 100%;
+        }
+    }
+}
+// / Warehouse
+
+// Service
+.section-service {
+    color: $color-black;
+    .title {
+        width: 58%;
+        margin: 0 auto 100px;
+    }
+
+    .items {
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+
+    .item {
+        width: 33%;
+        margin-left: 66px;
+        text-align: center;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+    .circle {
+        display: flex;
+        margin-bottom: 40px;
+        align-items: center;
+        justify-content: center;
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        border: 5px solid #ffbc3b;
+
+        span {
+            font-size: 30px;
+            font-weight: 700;
+        }
+    }
+    
+    .text {
+        font-size: 18px;
+    }
+}
+// / Service
