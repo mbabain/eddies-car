@@ -1220,6 +1220,18 @@ body {
         align-items: center;
     }
 
+    .author {
+        position: relative;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 600;
+        color: $color-white;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
     .love-png {
         margin-left: 5px;
         margin-right: 5px;
