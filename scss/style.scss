@@ -34,8 +34,20 @@
 
 // Varibales
 
+$color-blue: #1866af;
+$color-yellow: #f7b516;
 $color-white: #ffffff;
 $color-black: #000000;
+
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+$screen-xs-max: 575px;
+$screen-sm-max: 767px;
+$screen-md-max: 991px;
+$screen-lg-max: 1199px;
 
 // / Variables
 
@@ -56,6 +68,10 @@ body {
 .section-outer--header {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.section-outer--footer {
+    padding: 40px 15px;
 }
 
 .section-outer--first-block {
@@ -97,7 +113,11 @@ body {
         text-transform: uppercase;
         color: #818181;
     }
+    @media (max-width: $screen-xs-max) {
+        width: 270px;
+    }
 }
+
 
 .input--telephone,
 .input--email {  
@@ -121,14 +141,20 @@ body {
     margin-bottom: 25px;
     font-weight: 900;
     color: $color-white;
+
+    @media (max-width: $screen-xs-max) {
+        font-size: 30px;
+    }
 } 
 .title--font-smaller {
     font-size: 30px;
+
+    @media (max-width: $screen-xs-max) {
+        font-size: 24px;
+    }
 }
 
 .title--black {
-    width: 60%;
-    margin: 0 auto 25px;
     color: $color-black;
 }
 
@@ -207,6 +233,18 @@ body {
             background-color: #1669b3;
         }
     }
+
+    @media (max-width: $screen-md-max) {
+        &-timetable {
+            display: none;
+        }
+        &-request-сall {
+            &__wrapper,
+            &__button {
+                display: none;
+            }
+        }
+    }
 }
 // / Header
 
@@ -221,16 +259,13 @@ body {
     }
 
     &-item {
-        width: 50%;
-        padding: 100px 124px 125px 100px;
         text-align: start;
-        background-color: #f7b516;
+        background-color: $color-yellow;
         color: $color-black;
     }
 
     &-title {
         margin-bottom: 35px;
-        font-size: 40px;
         font-weight: 900;
         text-transform: uppercase;
         line-height: 1.375;
@@ -254,6 +289,60 @@ body {
             margin-right: 26px;
         }
     }
+    @media (max-width: $screen-md-max) {
+        &-item {
+            width: 60%;
+            padding: 75px 99px 100px 75px;
+        }
+
+        &-title {
+            font-size: 30px;
+        }
+
+        &-subtitle {
+            font-size: 20px;
+        }
+
+        &-advantages {
+            font-size: 13px;
+        }
+    }
+
+    @media (min-width: $screen-lg) {
+        &-item {
+            width: 50%;
+            padding: 100px 124px 125px 100px;
+        }
+
+        &-title {
+            font-size: 40px;
+        }
+    }
+
+    @media (max-width: $screen-sm-max) {
+        &-item {
+            width: 70%;
+            padding: 60px 84px 50px 60px;
+        }
+
+        &-title {
+            font-size: 25px;
+        }
+    }
+
+    @media (max-width: $screen-xs-max) {
+        &-item {
+            width: 90%;
+        }
+
+        &-title {
+            font-size: 20px;
+        }
+
+        &-subtitle {
+            font-size: 16px;
+        }
+    }
 }
 // / First-block
 
@@ -262,6 +351,7 @@ body {
     background: url("../img/price/background.jpg")
         no-repeat center;
         background-size: cover;
+
     .section-inner {
         display: flex;
         flex-direction: column;
@@ -270,7 +360,6 @@ body {
     }
 
     &-title {
-        width: 40%;
         margin-bottom: 60px;
         font-size: 30px;
         font-weight: 900;
@@ -285,10 +374,13 @@ body {
         }
     }
 
+    &-row--reverse {
+        flex-direction: row-reverse;
+    }
+
     &-text {
         display: flex;
         align-items: center;
-        margin-right: 30px;
         font-size: 14px;
         color: $color-black;
 
@@ -298,8 +390,37 @@ body {
     }
 
     &-button {
-        background-color: #1866af;
+        background-color: $color-blue;
         padding: 31px 112px;
+    }
+
+    @media (max-width: $screen-md-max) {
+        &-row {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &-text {
+            margin-top: 30px;
+        }
+
+
+        .input--telephone {
+            margin-top: 30px;
+            margin-left: 0;
+        }
+    }
+
+    @media (min-width: $screen-lg) {
+        &-button {
+            margin-left: 30px;
+        }
+    }
+
+    @media (max-width: $screen-xs-max) {
+        &-button {
+            padding: 24px 63px;
+        }
     }
 }
 // / Price
@@ -313,7 +434,6 @@ body {
     }
 
     .subtitle {
-        width: 35%;
         margin: 0 auto;
     }
 
@@ -322,11 +442,6 @@ body {
     }
 
     .item {
-
-        & + & {
-            margin-left: 50px;
-        }
-
         .engine {
             margin-bottom: 49px;
         }
@@ -344,6 +459,39 @@ body {
     &-text {
         font-size: 18px;
         text-align: center;
+    }
+
+    @media (max-width: $screen-md-max) {
+        .subtitle {
+            width: 75%;
+        }
+
+        .items {
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .item {
+            flex: 1 1 250px;
+            margin-bottom: 70px;
+        }
+    }
+
+    @media (min-width: $screen-lg) {
+        .subtitle {
+            width: 35%;
+        }
+
+        .items {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        .item {
+            & + & {
+                margin-left: 50px;
+            }
+        }
     }
 }
 // / Fast
@@ -364,14 +512,11 @@ body {
         justify-content: center;
     }
 
-    .input {
-        margin-right: 30px;
-    }
-
     .button {
+        width: 370px;
+        height: 70px;
         line-height: 0.9;
-        padding: 28px 131px;
-        background-color: #f7b516;
+        background-color: $color-yellow;
     }
 
     &-text {
@@ -388,6 +533,34 @@ body {
             font-weight: 700;
         }
     }
+
+    @media (max-width: $screen-lg-max) {
+        .items {
+            flex-direction: column;
+        }
+
+        .input {
+            margin-bottom: 30px;
+            margin-right: 0;
+        }
+    }
+
+    @media (min-width: $screen-xl) {
+        .items {
+            flex-direction: row;
+        }
+
+        .input {
+            margin-right: 30px;
+        }
+    }
+
+    @media (max-width: $screen-xs-max) {
+        .button {
+            width: 270px;
+            height: 70px;
+        }
+    }
 }
 // / Search
 
@@ -401,7 +574,6 @@ body {
     }
 
     .item {
-        margin-left: 90px;
         text-align: center;
 
         &:first-child {
@@ -413,8 +585,8 @@ body {
         margin-bottom: 63px;
     }
 
+
     .description {
-        width: 85%;
         margin-bottom: 39px;
     }
 
@@ -422,6 +594,30 @@ body {
         font-weight: 700;
         color: $color-black;
         text-transform: uppercase;
+    }
+
+    @media (max-width: $screen-md-max) {
+        .items {
+            flex-direction: column;
+        }
+
+        .item {
+            margin-bottom: 70px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @media (min-width: $screen-lg) {
+        .items {
+            flex-direction: row;
+        }
+
+        .item {
+            margin-left: 90px;
+        }
     }
 }
 // / Gaurantee
@@ -435,19 +631,15 @@ body {
         margin: 0 auto 100px;
     }
 
-    .items {
-        align-items: flex-start;
+    .items-wrapper {
+        display: flex;
     }
 
     .item {
         width: 25%;
-        margin-left: 66px;
         text-align: center;
-
-        &:first-child {
-            margin-left: 0;
-        }
     }
+
     .circle {
         display: flex;
         margin-bottom: 35px;
@@ -466,6 +658,29 @@ body {
     
     .text {
         width: 80%;
+    }
+
+    @media (max-width: $screen-md-max) {
+        .items {
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .item {
+            flex: 1 1 250px;
+            margin-bottom: 70px;
+        }
+    }
+
+    @media (min-width: $screen-lg) {
+        .items {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        .item {
+            margin-left: 66px;
+        }
     }
 }
 // / Discount
@@ -486,8 +701,28 @@ body {
         margin-right: 30px;
 
         &:last-child {
+            position: relative;
             margin-right: 0;
         }
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+
+    .img-text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 230px;
+        height: 53px;
+        font-size: 14px;
+        background-color: #0b3554;
+        opacity: 0.8;
     }
 
     .questions {
@@ -576,7 +811,41 @@ body {
                 }
             }
         }
+    }
 
+    @media (max-width: $screen-md-max) {
+        .items {
+            flex-direction: column;
+        }
+
+        .item {
+            &:first-child {
+                margin-bottom: 100px;
+            }
+        }
+    }
+
+    @media (min-width: $screen-lg) {
+        .items {
+            flex-direction: row;
+        }
+    }
+
+    @media (max-width: $screen-xs-max) {
+        .question {
+            &-text {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+        .repeat {
+            span {
+                &:after {
+                    display: none;
+                }
+            }
+        }
     }
 }
 // / Faq
@@ -594,7 +863,6 @@ body {
     }
 
     .item {
-        width: 18%;
         margin-right: 20px;
 
         &:last-child {
@@ -609,6 +877,37 @@ body {
     .text {
         font-size: 18px;
         text-align: center;
+    }
+
+    @media (max-width: $screen-md-max) {
+        .items {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .item {
+            width: 60%;
+            margin-bottom: 100px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+    }
+
+    @media (min-width: $screen-lg) {
+        .text {
+            width: 70%;
+        }
+
+        .items {
+            align-items: flex-start;
+        }
+
+        .item {
+            width: 33%;
+        }
     }
 }
 // / Comfort
@@ -634,25 +933,37 @@ body {
             max-width: 100%;
         }
     }
+
+    @media (max-width: $screen-md-max) {
+        .items {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .item {
+            margin-right: 0;
+            margin-bottom: 50px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @media (min-width: $screen-lg) {
+    }
 }
 // / Warehouse
 
 // Service
 .section-service {
     color: $color-black;
-    .title {
-        width: 58%;
-        margin: 0 auto 100px;
-    }
 
     .items {
-        align-items: flex-start;
         justify-content: space-around;
     }
 
     .item {
-        width: 33%;
-        margin-left: 66px;
         text-align: center;
 
         &:first-child {
@@ -678,5 +989,182 @@ body {
     .text {
         font-size: 18px;
     }
+
+    @media (max-width: $screen-md-max) {
+        .title {
+            margin-bottom: 60px;
+        }
+        .items {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .item {
+            width: 40%;
+            margin-bottom: 100px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+    }
+
+    @media (min-width: $screen-lg) {
+        .title {
+            width: 58%;
+            margin: 0 auto 100px;
+        }
+
+        .items {
+            align-items: flex-start;
+        }
+
+        .item {
+            width: 33%;
+        }
+    }
 }
 // / Service
+
+// Consultations
+.section-consultations {
+    background: url("../img/consultations/background.jpg")
+        no-repeat center;
+    background-size: cover;
+
+    .headline {
+        margin-bottom: 60px;
+    }
+
+    &-text {
+        margin-bottom: 55px;
+        font-size: 14px;
+        text-align: center;
+
+        &__telephone {
+            margin-top: 8px;
+            font-size: 30px;
+            font-weight: 700;
+        }
+    }
+
+    .items {
+        justify-content: center;
+    }
+
+    .button {
+        background-color: $color-yellow;
+        width: 370px;
+        height: 70px;
+    }
+
+    @media (max-width: $screen-md-max) {
+        .items {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .item {
+            margin-bottom: 30px;
+        }
+
+    }
+
+    @media (min-width: $screen-lg) {
+        .button {
+            margin-left: 30px;
+        }
+    }
+
+    @media (max-width: $screen-xs-max) {
+        .button {
+            width: 270px;
+            height: 70px;
+        }
+    }
+}
+// / Consultations
+
+// Address
+.section-address {
+    background: url("../img/address/background.jpg")
+        no-repeat center;
+    background-size: cover;
+    color: $color-black;
+
+    .section-inner {
+        text-align: center;
+    }
+
+    .headline {
+        margin-bottom: 100px;
+    }
+
+    .address {
+        margin-bottom: 30px;
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .telephone {
+        font-size: 24px;
+        font-weight: 800;
+    }
+}
+// / Address
+
+// Footer 
+.section-footer {
+    background-color: $color-black;
+
+    .section-inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .copyright {
+        display: flex;
+        align-items: center;
+    }
+
+    .love-png {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .logo-design {
+        margin-left: 10px;
+    }
+
+    .text {
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .telephone {
+        font-size: 18px;
+        font-weight: 900;
+    }
+
+    @media (max-width: $screen-md-max) {
+        .section-inner {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo,
+        .copyright {
+            margin-bottom: 30px;
+        }
+
+        .copyright {
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    }
+
+    @media (min-width: $screen-lg) {
+    }
+}
+// / Footer
