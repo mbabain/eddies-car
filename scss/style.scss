@@ -86,6 +86,7 @@ body {
 
 
 .button {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -93,8 +94,49 @@ body {
     outline: none;
     font-weight: 700;
     text-transform: uppercase;
+    background-color: inherit;
     color: $color-white;
     cursor: pointer;
+
+    span {
+        position: relative;
+        z-index: 2;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        transform-origin: bottom right;
+        transition: 0.3s;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        transform-origin: top left;
+        transform: scale(0);
+        transition: 0.3s;
+    }
+
+    &:hover {
+        &:before {
+            transform: scale(0); 
+        }
+
+        &:after {
+            transform: scale(1);
+        }
+    }
 }
 
 .input {
@@ -103,6 +145,7 @@ body {
     outline: none;
     border: none;
     background-color: #f2f2f2;
+    transition: 0.3s;
 
     & + & {
         margin-left: 30px;
@@ -112,7 +155,17 @@ body {
         font-size: 13px;
         text-transform: uppercase;
         color: #818181;
+        transition: 0.3s;
     }
+
+    &:focus {
+        background-color: #adadad;
+
+        &::placeholder {
+            color: #f2f2f2;
+        }
+    }
+
     @media (max-width: $screen-xs-max) {
         width: 270px;
     }
@@ -230,7 +283,14 @@ body {
         &__button {
             padding: 19px 28px;
             font-size: 12px;
-            background-color: #1669b3;
+
+            &:before {
+                background-color: #1669b3;
+            }
+
+            &:after {
+                border: 3px solid #1669b3;
+            }
         }
     }
 
@@ -390,8 +450,20 @@ body {
     }
 
     &-button {
-        background-color: $color-blue;
         padding: 31px 112px;
+        transition: 0.3s;
+
+        &:before {
+            background-color: $color-blue
+        }
+
+        &:after {
+            border: 3px solid $color-blue;
+        }
+
+        &:hover {
+            color: $color-black;
+        }
     }
 
     @media (max-width: $screen-md-max) {
@@ -516,7 +588,14 @@ body {
         width: 370px;
         height: 70px;
         line-height: 0.9;
-        background-color: $color-yellow;
+
+        &:before {
+            background-color: $color-yellow;
+        }
+
+        &:after {
+            border: 3px solid $color-yellow;
+        }
     }
 
     &-text {
@@ -1054,9 +1133,16 @@ body {
     }
 
     .button {
-        background-color: $color-yellow;
         width: 370px;
         height: 70px;
+
+        &:before {
+            background-color: $color-yellow;
+        }
+
+        &:after {
+            border: 3px solid $color-yellow;
+        }
     }
 
     @media (max-width: $screen-md-max) {
@@ -1113,6 +1199,12 @@ body {
     }
 }
 // / Address
+
+.section-map {
+    iframe {
+        display: block;
+    }
+}
 
 // Footer 
 .section-footer {

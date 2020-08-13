@@ -53,6 +53,7 @@ body {
   margin: 0 auto; }
 
 .button {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,21 +61,56 @@ body {
   outline: none;
   font-weight: 700;
   text-transform: uppercase;
+  background-color: inherit;
   color: #ffffff;
   cursor: pointer; }
+  .button span {
+    position: relative;
+    z-index: 2; }
+  .button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    transform-origin: bottom right;
+    transition: 0.3s; }
+  .button:after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    transform-origin: top left;
+    transform: scale(0);
+    transition: 0.3s; }
+  .button:hover:before {
+    transform: scale(0); }
+  .button:hover:after {
+    transform: scale(1); }
 
 .input {
   width: 370px;
   padding: 26px 29px;
   outline: none;
   border: none;
-  background-color: #f2f2f2; }
+  background-color: #f2f2f2;
+  transition: 0.3s; }
   .input + .input {
     margin-left: 30px; }
   .input::placeholder {
     font-size: 13px;
     text-transform: uppercase;
-    color: #818181; }
+    color: #818181;
+    transition: 0.3s; }
+  .input:focus {
+    background-color: #adadad; }
+    .input:focus::placeholder {
+      color: #f2f2f2; }
   @media (max-width: 575px) {
     .input {
       width: 270px; } }
@@ -162,8 +198,11 @@ body {
       color: #ffffff; }
     .section-header-request-сall__button {
       padding: 19px 28px;
-      font-size: 12px;
-      background-color: #1669b3; }
+      font-size: 12px; }
+      .section-header-request-сall__button:before {
+        background-color: #1669b3; }
+      .section-header-request-сall__button:after {
+        border: 3px solid #1669b3; }
   @media (max-width: 991px) {
     .section-header-timetable {
       display: none; }
@@ -254,8 +293,14 @@ body {
     .section-price-text img {
       margin-left: 30px; }
   .section-price-button {
-    background-color: #1866af;
-    padding: 31px 112px; }
+    padding: 31px 112px;
+    transition: 0.3s; }
+    .section-price-button:before {
+      background-color: #1866af; }
+    .section-price-button:after {
+      border: 3px solid #1866af; }
+    .section-price-button:hover {
+      color: #000000; }
   @media (max-width: 991px) {
     .section-price-row {
       flex-direction: column;
@@ -320,8 +365,11 @@ body {
   .section-search .button {
     width: 370px;
     height: 70px;
-    line-height: 0.9;
-    background-color: #f7b516; }
+    line-height: 0.9; }
+    .section-search .button:before {
+      background-color: #f7b516; }
+    .section-search .button:after {
+      border: 3px solid #f7b516; }
   .section-search-text {
     font-size: 14px;
     text-align: center; }
@@ -623,9 +671,12 @@ body {
   .section-consultations .items {
     justify-content: center; }
   .section-consultations .button {
-    background-color: #f7b516;
     width: 370px;
     height: 70px; }
+    .section-consultations .button:before {
+      background-color: #f7b516; }
+    .section-consultations .button:after {
+      border: 3px solid #f7b516; }
   @media (max-width: 991px) {
     .section-consultations .items {
       flex-direction: column;
@@ -655,6 +706,9 @@ body {
   .section-address .telephone {
     font-size: 24px;
     font-weight: 800; }
+
+.section-map iframe {
+  display: block; }
 
 .section-footer {
   background-color: #000000; }
